@@ -1,0 +1,337 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito:wght@400;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  .eb-wrap{
+    background:#F5EDD6;
+    font-family:'Nunito',sans-serif;
+    overflow:hidden;
+  }
+
+  /* SUNRAY BG */
+  .sunray{
+    position:relative;
+    background:
+      repeating-conic-gradient(#E8E0BF 0deg 10deg, #D4CBA3 10deg 20deg);
+    overflow:hidden;
+  }
+  .sunray::before{
+    content:'';position:absolute;inset:0;
+    background:#F5EDD6CC;
+  }
+
+  /* HEADER */
+  .header{
+    position:relative;z-index:1;
+    text-align:center;
+    padding:2.2rem 1rem 1.6rem;
+    border-bottom:4px solid #2B2B2B;
+  }
+  .ict-tag{
+    font-size:.8rem;font-weight:800;letter-spacing:3px;
+    color:#2B2B2B;text-transform:uppercase;margin-bottom:.3rem;
+  }
+  .logo-line{
+    font-family:'Alfa Slab One',serif;
+    font-size:clamp(2rem,9vw,4.2rem);
+    line-height:1;color:#2B2B2B;
+    text-shadow:3px 3px 0 #C8B880;
+  }
+  .logo-red{color:#C0392B;text-shadow:3px 3px 0 #7B1A10;}
+  .logo-amp{color:#2B2B2B;}
+
+  /* MARQUEE */
+  .marquee-wrap{
+    background:#2B2B2B;
+    padding:.45rem 0;overflow:hidden;
+    border-top:3px solid #C0392B;
+    border-bottom:3px solid #C0392B;
+  }
+  .marquee{white-space:nowrap;animation:scroll 20s linear infinite;}
+  .marquee span{
+    display:inline-block;color:#F5EDD6;
+    font-size:.78rem;font-weight:800;
+    padding:0 2.5rem;letter-spacing:2px;
+    text-transform:uppercase;
+  }
+  .marquee span::before{content:'✦ ';}
+  @keyframes scroll{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
+
+  /* HERO */
+  .hero{
+    position:relative;z-index:1;
+    text-align:center;
+    padding:1.8rem 1rem 1.4rem;
+    border-bottom:3px solid #2B2B2B;
+  }
+  .hero-date{
+    display:inline-block;
+    background:#C0392B;color:#F5EDD6;
+    font-family:'Alfa Slab One',serif;
+    font-size:1rem;letter-spacing:2px;
+    padding:.35rem 1.4rem;
+    border-radius:999px;
+    border:2px solid #2B2B2B;
+    margin-bottom:.8rem;
+  }
+  .hero-text{
+    font-family:'Alfa Slab One',serif;
+    font-size:clamp(1rem,3vw,1.4rem);
+    color:#2B2B2B;
+  }
+  .hero-sub{font-size:.85rem;color:#5C5033;margin-top:.3rem;font-weight:700;}
+
+  /* BADGE */
+  .badge-row{display:flex;justify-content:center;gap:10px;margin-top:1rem;flex-wrap:wrap;}
+  .badge{
+    background:#F5EDD6;color:#2B2B2B;
+    font-size:.78rem;font-weight:800;letter-spacing:1px;
+    padding:.3rem 1.1rem;border-radius:999px;
+    border:2.5px solid #2B2B2B;
+    text-transform:uppercase;
+  }
+
+  /* SHOPS */
+  .shops-section{
+    position:relative;z-index:1;
+    padding:2rem 1.2rem 2.2rem;
+  }
+  .section-title{
+    font-family:'Alfa Slab One',serif;
+    font-size:1.5rem;color:#2B2B2B;
+    text-align:center;margin-bottom:1.4rem;
+    position:relative;
+  }
+  .section-title span{
+    background:#C0392B;color:#F5EDD6;
+    padding:.1rem .7rem;border-radius:4px;
+    margin-left:.3rem;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(175px,1fr));
+    gap:1rem;max-width:780px;margin:0 auto;
+  }
+
+  .shop-btn{
+    display:flex;flex-direction:column;align-items:center;
+    padding:1.4rem 1rem 1.2rem;
+    border-radius:14px;
+    border:3px solid #2B2B2B;
+    cursor:pointer;
+    text-decoration:none;
+    transition:transform .16s,box-shadow .16s;
+    position:relative;
+    box-shadow:4px 4px 0 #2B2B2B;
+  }
+  .shop-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #2B2B2B;}
+  .shop-btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #2B2B2B;}
+  .shop-btn .icon{font-size:2.2rem;margin-bottom:.6rem;}
+  .shop-btn .name{
+    font-family:'Alfa Slab One',serif;
+    font-size:.95rem;color:#2B2B2B;
+    text-align:center;
+  }
+  .shop-btn .desc{
+    font-size:.72rem;font-weight:700;
+    margin-top:.25rem;text-align:center;
+  }
+
+  .s1{background:#C0392B;} .s1 .name,.s1 .desc{color:#F5EDD6;}
+  .s2{background:#8B7355;} .s2 .name,.s2 .desc{color:#F5EDD6;}
+  .s3{background:#D4A844;} .s3 .name{color:#2B2B2B;} .s3 .desc{color:#5C3D0A;}
+  .s4{background:#7A9E5F;} .s4 .name,.s4 .desc{color:#F5EDD6;}
+  .s5{background:#2B2B2B;} .s5 .name,.s5 .desc{color:#F5EDD6;}
+  .s6{background:#B5713A;} .s6 .name,.s6 .desc{color:#F5EDD6;}
+
+  /* STARBURST */
+  .starburst-row{display:flex;justify-content:center;margin:1.5rem 0 .5rem;}
+  .starburst{
+    display:inline-block;
+    background:#D4A844;
+    color:#2B2B2B;
+    font-family:'Alfa Slab One',serif;
+    font-size:.78rem;letter-spacing:1px;
+    padding:.5rem 1.2rem;
+    border:3px solid #2B2B2B;
+    border-radius:4px;
+    transform:rotate(-2deg);
+    box-shadow:3px 3px 0 #2B2B2B;
+    text-transform:uppercase;
+  }
+
+  /* FOOTER */
+  .footer{
+    background:#2B2B2B;
+    padding:1.8rem 1rem 1.5rem;
+    text-align:center;
+    border-top:4px solid #C0392B;
+  }
+  .footer-logo{
+    font-family:'Alfa Slab One',serif;
+    font-size:1.8rem;color:#F5EDD6;
+    letter-spacing:-1px;
+  }
+  .footer-logo span{color:#C0392B;}
+  .footer-divider{
+    width:60px;height:3px;
+    background:#D4A844;
+    margin:.8rem auto;border-radius:2px;
+  }
+  .footer-by{font-size:.88rem;color:#C8B880;font-weight:800;letter-spacing:1px;}
+  .footer-by strong{color:#F5EDD6;}
+  .footer-contact{
+    display:flex;justify-content:center;gap:1.5rem;
+    margin-top:.8rem;flex-wrap:wrap;
+  }
+  .footer-contact span{font-size:.75rem;color:#8B7355;font-weight:700;}
+</style>
+
+<div class="eb-wrap">
+  <h2 style="position:absolute;left:-9999px;">E-Bazaar Retro Marketplace Homepage</h2>
+
+  <div class="sunray">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="ict-tag">ICT Presents</div>
+      <!--<div class="logo-line">ECONOMICS &</div>-->
+      <div class="logo-line logo-red">E-BAZAAR</div>
+      <div class="badge-row">
+        <div class="badge">Food</div>
+        <div class="badge">Drinks</div>
+        <div class="badge">Dessert</div>
+      </div>
+    </header>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap">
+      <div class="marquee">
+        <span>26 April</span>
+        <span>10:00 AM – 11:10 AM</span>
+        <span>Variety of Food</span>
+        <span>Welcome to E-Bazaar</span>
+        <span>Shop Smart</span>
+        <span>Great Deals Await</span>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-date">26 April · 10:00AM–11:10 AM</div>
+      <div class="hero-text">Explore Our Online Shops</div>
+      <div class="hero-sub">Click any stall to start shopping</div>
+    </section>
+
+    <!-- SHOPS -->
+    <section class="shops-section">
+      <div class="section-title">Our <span>Stalls</span></div>
+      <div class="grid">
+        <!-- 11B Maria Group Not Yet -->
+        <a class="shop-btn s6" href="https://sarah-alamri.github.io/Sugarveil-Bakery/">
+          <div class="icon">🥞☕</div>
+          <div class="name">Sugarveil Bakery</div>
+          <div class="desc">delicious, sweet pastries</div>
+        </a>
+
+        <!-- 11B sama Group -->
+        <a class="shop-btn s6" href="https://crave-station-pulse.base44.app/">
+          <div class="icon">🍔</div>
+          <div class="name">ADDICTION.STATION </div>
+          <div class="desc"> Burger and More </div>
+        </a>
+
+        <!-- 11B Juleen Group Not Yet -->
+        <a class="shop-btn s6" href="https://sarah-alamri.github.io/La-Mentira/">
+          <div class="icon">🍹</div>
+          <div class="name">La Mentira</div>
+          <div class="desc">delicious mocktails</div>
+        </a>
+
+        <!-- 11B Reem Group -->
+        <a class="shop-btn s6" href="https://sarah-alamri.github.io/-Quack-Matcha/">
+          <div class="icon">🍵</div>
+          <div class="name">ta quack matcha</div>
+          <div class="desc">Life is better with Quack Matcha</div>
+        </a>
+
+        <!-- 11A Aya group -->
+        <a class="shop-btn s1" href="https://golden-bazar-bites.base44.app">
+          <div class="icon">🐉</div>
+          <div class="name"> Golden Dragon </div>
+          <div class="desc"> Chiness Food </div>
+        </a>
+
+        <!-- 11A Ward Group -->
+        <a class="shop-btn s2" href="https://sarah-alamri.github.io/Sweet-Treats/">
+          <div class="icon">🍪</div>
+          <div class="name">Sweet Treats</div>
+          <div class="desc">Sweet & Delightful</div>
+        </a>
+        <!-- 11A Wafaa Group -->
+        <a class="shop-btn s3" href="https://sarah-alamri.github.io/Green-Leaves/">
+          <div class="icon">🥬</div>
+          <div class="name">Green Leaves</div>
+          <div class="desc">Fresh & Tasty</div>
+        </a>
+
+        <!-- 11A Malak Group -->
+        <a class="shop-btn s4" href="https://sarah-alamri.github.io/Brookies-For-Brokies/">
+          <div class="icon">🍪🟫</div>
+          <div class="name">Brookies-For-Brokies</div>
+          <div class="desc">Cookies & More</div>
+        </a>
+
+        <!-- 11A Fatimah Group -->
+        <a class="shop-btn s5" href="https://sarah-alamri.github.io/Brookies-For-Brokies/">
+          <div class="icon">🍜</div>
+          <div class="name">Noodle corner</div>
+          <div class="desc">Noodle Delights</div>
+        </a>
+
+        <!-- 11A nourah Group  -->
+        <a class="shop-btn s6" href="https://sarah-alamri.github.io/CRUNCH/">
+          <div class="icon">📷</div>
+          <div class="name">CRUNCH</div>
+          <div class="desc">Capture.Style.Keep.</div>
+        </a>
+
+        <!-- 11B Nada Group -->
+        <a class="shop-btn s6" href="https://sarah-alamri.github.io/Dazzle-Accesories/">
+          <div class="icon">💍</div>
+          <div class="name">Dazzle Accesories</div>
+          <div class="desc">Swanky & Stylish</div>
+        </a>
+
+        <!-- 11B Lelas Group -->
+        <a class="shop-btn s6" href="https://sarah-alamri.github.io/Matcha-Krisp/">
+          <div class="icon">🍵</div>
+          <div class="name">Matcha-Krisp</div>
+          <div class="desc">Sweet Treats</div>
+        </a>
+        
+        
+      </div>
+        
+
+      <div class="starburst-row">
+        <div class="starburst">✦ Variety of Food & More ✦</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo"><span>E</span>-BAZAAR</div>
+    <div class="footer-divider"></div>
+    <div class="footer-by">By <strong>Ms. Sarah Alamri</strong></div>
+    <div class="footer-contact">
+      <span>ICT HOD </br>
+        Alyaa Gugumji
+      </span>
+      <span>School Principal</br>
+        Najlaa KhoshHal
+      </span>
+    </div>
+  </footer>
+</div>
